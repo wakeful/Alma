@@ -19,9 +19,9 @@ COPY php.ini /etc/php5/apache2/conf.d/
 RUN a2dismod alias
 RUN a2enmod expires headers rewrite unique_id
 
-COPY vhost /etc/apache2/sites-available
+COPY apphost /etc/apache2/sites-available/
 RUN a2dissite default
-RUN a2ensite vhost
+RUN a2ensite apphost
 
 RUN update-rc.d apache2 defaults
 
